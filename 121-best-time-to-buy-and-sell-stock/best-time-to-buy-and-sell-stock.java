@@ -3,7 +3,7 @@ class Solution {
 
         // optimal approach
         int n = prices.length;
-      int maxProfit = Integer.MIN_VALUE;
+      int maxProfit = 0;
       int mini = prices[0];
 
       
