@@ -1,16 +1,20 @@
 class Solution {
     public int[] replaceElements(int[] arr) {
-       
-       // brute force approch
-       int n = arr.length ;
 
-       for(int i =0 ;  i<n ; i++){
-        int max = -1 ;
-        for(int j = i+1 ; j<n ; j++){
-             max = Math.max(max , arr[j]);
+        // optimal approaCH
+
+        int n = arr.length;
+        
+        int  max =  arr[n-1];
+        arr[n-1] = -1;
+
+        for(int i = n-2 ; i>= 0 ; i--){
+            int currMax = arr[i];
+            arr[i] = max;
+            max = Math.max(max ,currMax);
         }
-        arr[i]=max;
-       }
-       return arr;
+
+       
+        return arr;
     }
 }
