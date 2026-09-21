@@ -1,24 +1,20 @@
 class Solution {
     public int addDigits(int num) {
-        // brute force approach  
-
-        if(num < 10){
-            return num;
-        } 
-
-        while(num >= 10){
-
-            int sum = 0;
-
-            while(num > 0){
-                int digit = num % 10;
-                sum = sum + digit;
-                num = num / 10;
-            }
-
-            num = sum;
+        
+        int sum =0;
+       while(num > 0){
+        
+        int temp = num % 10 ;
+        sum =sum + temp;
+        if(sum >= 10){
+            int a = sum % 10;
+            int b = sum / 10;
+            sum = a+ b;
         }
+        num = num /10;
+        
 
-        return num;
+       }
+       return sum;
     }
 }
